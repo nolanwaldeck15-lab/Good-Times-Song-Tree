@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good Times — Sample Lineage Tree</title>
+<style>
+  :root {
+    --green: #1D9E75; --green-border: #0F6E56; --green-light: #E1F5EE; --green-mid: #9FE1CB;
+    --purple: #534AB7; --purple-border: #3C3489; --purple-light: #EEEDFE; --purple-mid: #AFA9EC;
+    --blue: #185FA5; --blue-border: #0C447C; --blue-light: #E6F1FB; --blue-mid: #85B7EB;
+    --spotify: #1DB954;
+    --bg: #ffffff; --bg2: #f5f4f0;
+    --border: rgba(0,0,0,0.15); --border2: rgba(0,0,0,0.28);
+    --text: #1a1a18; --text2: #6b6b67;
+    --radius: 8px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a18; --bg2: #242422;
+      --border: rgba(255,255,255,0.12); --border2: rgba(255,255,255,0.28);
+      --text: #e8e6de; --text2: #9c9a92;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text);
+    padding: 32px 24px 56px; min-height: 100vh;
+  }
+  header { margin-bottom: 28px; }
+  header h1 { font-size: 22px; font-weight: 600; margin-bottom: 4px; }
+  header p { font-size: 13px; color: var(--text2); }
+
+  .col-headers {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    max-width: 740px; margin-bottom: 8px;
+  }
+  .col-header {
+    font-size: 10px; letter-spacing: 0.8px; text-transform: uppercase;
+    color: var(--text2); text-align: center; padding: 0 8px;
+  }
+  .grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    max-width: 740px; align-items: start;
+  }
+  .col {
+    display: flex; flex-direction: column; gap: 8px;
+    padding: 0 8px; border-left: 1px dashed var(--border);
+  }
+  .col:first-child { border-left: none; }
+  .spacer { height: 20px; }
+
+  a.card {
+    display: flex; flex-direction: column;
+    border-radius: var(--radius); padding: 10px 12px;
+    text-decoration: none; line-height: 1.45;
+    transition: opacity 0.15s, transform 0.12s;
+  }
+  a.card:hover { opacity: 0.82; transform: translateY(-2px); }
+  .card .title { font-size: 13px; font-weight: 600; }
+  .card .sub   { font-size: 11px; margin-top: 2px; }
+  .card .rel   { font-size: 10px; margin-top: 2px; opacity: 0.8; }
+  .card .hint  { font-size: 10px; margin-top: 6px; color: var(--spotify); font-weight: 500; }
+
+  .root    { background: var(--green);  border: 1.5px solid var(--green-border); }
+  .root    .title { color: var(--green-light); }
+  .root    .sub   { color: var(--green-mid); }
+  .root    .rel   { color: var(--green-mid); }
+
+  .interp  { background: var(--purple); border: 1px solid var(--purple-border); }
+  .interp  .title { color: var(--purple-light); }
+  .interp  .sub   { color: var(--purple-mid); }
+  .interp  .rel   { color: var(--purple-mid); }
+
+  .sample  { background: var(--blue);   border: 1px solid var(--blue-border); }
+  .sample  .title { color: var(--blue-light); }
+  .sample  .sub   { color: var(--blue-mid); }
+  .sample  .rel   { color: var(--blue-mid); }
+
+  .influence { background: var(--bg2); border: 0.5px solid var(--border2); }
+  .influence .title { color: var(--text); }
+  .influence .sub   { color: var(--text2); }
+  .influence .rel   { color: var(--text2); }
+
+  .legend {
+    display: flex; gap: 20px; flex-wrap: wrap;
+    margin-top: 28px; max-width: 740px;
+    font-size: 12px; color: var(--text2);
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+  .note {
+    margin-top: 20px; max-width: 740px;
+    font-size: 12px; color: var(--text2); line-height: 1.6;
+    padding: 12px 14px; border: 0.5px solid var(--border);
+    border-radius: var(--radius); background: var(--bg2);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Good Times — Sample Lineage Tree</h1>
+  <p>Chic · 1979 · Click any card to open in your Spotify app</p>
+</header>
+
+<div class="col-headers">
+  <div class="col-header">Inspiration</div>
+  <div class="col-header">Root</div>
+  <div class="col-header">Generation 1</div>
+  <div class="col-header">Generation 2–3</div>
+</div>
+
+<div class="grid">
+
+  <div class="col">
+    <div class="spacer"></div>
+    <a class="card influence" href="https://open.spotify.com/track/7pB9pWgtFNRvXUY0Mkr1wH">
+      <span class="title">Hollywood Swinging</span>
+      <span class="sub">Kool & the Gang · 1974</span>
+      <span class="rel">inspired Good Times bassline</span>
+      <span class="hint">▶ play in Spotify</span>
+    </a>
+    <div class="spacer"></div>
+  </div>
+
+  <div class="col">
+    <div class="spacer"></div>
+    <a class="card root" href="https://open.spotify.com/track/0G3fbPbE1vGeABDEZF0jeG">
+      <span class="title">Good Times ★</span>
+      <span class="sub">Chic · 1979</span>
+      <span class="rel">the root · #1 Billboard</span>
+      <span class="hint">▶ play in Spotify</span>
+    </a>
+    <div class="spacer"></div>
+  </div>
+
+  <div class="col">
+    <a class="card interp" href="https://open.spotify.com/track/0FWhGmPVxLI6jOVF0wjALa">
+      <span class="title">Rapper's Delight</span>
+      <span class="sub">Sugarhill Gang · 1979</span>
+      <span class="rel">interpolation · leaf node</span>
+      <span class="hint">▶ play in Spotify</span>
+    </a>
+    <a class="card sample" href="https://open.spotify.com/track/2MYPBSmHH4a8tr08Zs2mDC">
+      <span class="title">Bounce Rock Skate Roll</span>
+      <span class="sub">Vaughan Mason & Crew · 1980</span>
+      <span class="rel">direct sample</span>
+      <span class="hint">▶ play in Spotify</span>
+    </a>
+    <a class="card influence" href="https://open.spotify.com/track/5Lsg8jlCoTyxRch9LvJo3E">
+      <span class="title">Another One Bites the Dust</span>
+      <span class="sub">Queen · 1980</span>
+      <span class="rel">bassline influenced by Good Times</span>
+      <span class="hint">▶ play in Spotify</span>
+    </a>
+    <a class="card influence" href="https://open.spotify.com/track/6F2vo4sxRNQ58VYe3pdiaL">
+      <span class="title">Rapture</span>
+      <span class="sub">Blondie · 1981</span>
+      <span class="rel">groove influenced by Good Times</span>
+      <span class="hint">▶ play in Spotify</span>
+    </a>
+    <a class="card sample" href="https://open.spotify.com/track/1EIHz893EpsuCbyuZtn4ha">
+      <span class="title">Wheels of Steel</span>
+      <span class="sub">Grandmaster Flash · 1981</span>
+      <span class="rel">samples Good Times + Rapture + Another One</span>
+      <span class="hint">▶ play in Spotify</span>
+    </a>
+  </div>
+
+  <div class="col">
+    <a class="card influence" href="https://open.spotify.com/track/6Hr1TKfmVYgCceUeOx6yA0">
+      <span class="title">Under Pressure</span>
+      <span class="sub">Queen & David Bowie · 1981</span>
+      <span class="rel">influenced by Another One</span>
+      <span class="hint">▶ play in Spotify</span>
+    </a>
+    <a class="card sample" href="https://open.spotify.com/track/1l1vuivI3OwJ8lkh7CpeX5">
+      <span class="title">Ice Ice Baby</span>
+      <span class="sub">Vanilla Ice · 1990</span>
+      <span class="rel">direct sample of Under Pressure</span>
+      <span class="hint">▶ play in Spotify</span>
+    </a>
+    <a class="card sample" href="https://open.spotify.com/track/5xXL4i9L2ZbKBtENNh8fWY">
+      <span class="title">Step Into a World</span>
+      <span class="sub">KRS-One · 1997</span>
+      <span class="rel">direct sample of Rapture</span>
+      <span class="hint">▶ play in Spotify</span>
+    </a>
+    <a class="card sample" href="https://open.spotify.com/track/2hnDRXVE8vfVv0V3wt0R3r">
+      <span class="title">I'll Be (Remix)</span>
+      <span class="sub">Foxy Brown ft. Jay-Z · 1997</span>
+      <span class="rel">direct sample of Rapture</span>
+      <span class="hint">▶ play in Spotify</span>
+    </a>
+  </div>
+
+</div>
+
+<div class="legend">
+  <div class="legend-item"><span class="swatch" style="background:#1D9E75;"></span>root</div>
+  <div class="legend-item"><span class="swatch" style="background:#534AB7;"></span>interpolation</div>
+  <div class="legend-item"><span class="swatch" style="background:#185FA5;"></span>direct sample</div>
+  <div class="legend-item"><span class="swatch" style="background:#e8e6de;border:0.5px solid rgba(0,0,0,0.2);"></span>influence</div>
+</div>
+
+<div class="note">
+  <strong>Tip:</strong> clicking a card fires a <code>spotify:track:</code> URI which hands off directly to your desktop or mobile Spotify app. Make sure Spotify is running first. If your browser asks which app to open, pick Spotify.
+</div>
+
+</body>
+</html>
